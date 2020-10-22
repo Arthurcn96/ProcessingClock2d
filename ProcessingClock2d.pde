@@ -9,14 +9,15 @@ int mX, mY;
 void setup() {
   size(800, 700, P3D);
   cursor(HAND);
-  
+
   up_img = loadImage("up.png");
   down_img = loadImage("down.png");
-  
+
   int dim = 8 ;
 
-  mostrador = new Mostrador(0);
+  mostrador = new Mostrador(-10);
   caixa = new Caixa();
+  
   mX = (width / 2) + dim;
   mY = (height / 2);
 
@@ -27,19 +28,25 @@ void setup() {
 void draw() {
   background(101);
   camera();
- 
-  caixa.show();
-  mostrador.show();
+
   //x, y, tamanho_x, tamanho_y
-  image(down_img, -135,187,275,150);
-  image(up_img, -135,-325,275,150);
-  
+
+    image(down_img, -135,185,275,150);
+    image(up_img, -135,-330,275,150);
 
   pushMatrix();
-  fill(#000000);
-  sphere(10);
+    translate (0,0,50);
+    mostrador.show();
+    caixa.show();
   popMatrix();
-  
+
+  pushMatrix();
+    stroke(#000000);
+    sphere(10);
+  popMatrix();
+
+  pointLight(51, 102, 126, 35, 40, 36);
+
 }
 
 

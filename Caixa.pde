@@ -1,36 +1,41 @@
 // Corpo do relógio onde as peças são montadas
-PShape s;
+int w = 0;
+int h = 0;
+color primary;
+color secondary;
 
 class Caixa{
 
+
   Caixa(){
-      s = createShape();
 
-      s.beginShape();
-        s.vertex( 0.000000, 5.000000, 0.672764);
-        s.vertex( 2.500000, 4.330127, 0.672764);
-        s.vertex( 4.330127, 2.500000, 0.672764);
-        s.vertex( 5.000000 ,-0.000000, 0.672764);
-        s.vertex( 4.330127 ,-2.500000, 0.672764);
-        s.vertex( 2.500000 ,-4.330127, 0.672764);
-        s.vertex( 0.000001 ,-5.000000, 0.672764);
-        s.vertex( -2.499999 ,-4.330128, 0.672764);
-        s.vertex( -4.330126 ,-2.500001, 0.672764);
-        s.vertex( -5.000000 ,-0.000002, 0.672764);
-        s.vertex( -4.330129, 2.499997, 0.672764);
-        s.vertex( -2.500003, 4.330125, 0.672764);
-        s.vertex( 0.000000, 5.000000, 0.672764);
-      s.endShape();
+    w = 390;
+    h = 390;
 
+    primary = #FFFFFF;
+    secondary = #d02323;
 
-        s.scale(40);
-        s.setStroke(2);
+  }
+
+  Caixa(color primeira, color segunda){
+
+    w = 390;
+    h = 390;
+    
+    primary = primeira;
+    secondary = segunda;
+
   }
 
   void show(){
-      push();
-      translate(0,0,-50);
-      shape(s, 0, 0);
-      pop();
+
+      pushMatrix();
+        translate(-w/2, -h/2,-50);
+        fill(primary);
+        strokeWeight(10);
+        stroke(secondary);
+        rect(0, 0, w, h, 7);
+      popMatrix();
+
   }
 }

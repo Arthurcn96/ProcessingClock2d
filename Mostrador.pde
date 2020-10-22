@@ -9,16 +9,12 @@ class Mostrador {
   color primary = #000000;
   color secondary = #000000;
   color tertirary = #000000;
-  
-  ////////////////////
+
   int cx, cy;
   float secondsRadius;
   float minutesRadius;
   float hoursRadius;
   float clockDiameter;
-
-
-    
 
   Mostrador(int translate){
 
@@ -35,7 +31,7 @@ class Mostrador {
     pushMatrix();
 
       translate(0,0,dist);
-      rotate(radians(-50));
+      rotate(radians(-90));
 
        //Segundo
       strokeWeight(5);
@@ -73,65 +69,66 @@ class Mostrador {
         stroke(tertirary);
         line(0, 0, 60, 0);
       pop();
-      
- 
-    /////////////////////////
+
     int radius = min(width, height) / 4;
     secondsRadius = radius * 0.9;
     minutesRadius = radius * 0.10;
     hoursRadius = radius * 0.50;
     cx = 0;
     cy = 0;
-    /////////////////////////////
 
-          
     // Draw the minute ticks
     strokeWeight(3);
     beginShape(POINTS);
+
+    pushMatrix();
+    rotate(radians(90));
+    stroke(#FFFFFF);
     for (int a = 0; a < 360; a+=5) {
       float angle = radians(a);
       float x = cx + cos(angle) * secondsRadius;
       float y = cy + sin(angle) * secondsRadius;
       if(a==0){
         fill(255,0,0);
-        text("III", x+5,y+5);
+        text("I", x+5,y+5);
       }else if(a==30){
         fill(255,0,0);
-        text("IV", x+5,y+8);
+        text("II", x+5,y+8);
       }else if(a==60){
         fill(255,0,0);
-        text("V", x,y+13);
+        text("III", x,y+13);
       }else if(a==90){
         fill(255,0,0);
-        text("VI", x-3,y+15);
+        text("IV", x-3,y+15);
       }else if(a==120){
         fill(255,0,0);
-        text("VII'", x-5,y+13);
+        text("V'", x-5,y+13);
       }else if(a==150){
         fill(255,0,0);
-        text("VIII", x-12,y+8);
+        text("VI", x-12,y+8);
       }else if(a==180){
         fill(255,0,0);
-        text("IX", x-13,y+5);
+        text("VII", x-13,y+5);
       }else if(a==210){
         fill(255,0,0);
-        text("X", x-18,y+2);
+        text("VIII", x-18,y+2);
       }else if(a==240){
         fill(255,0,0);
-        text("XI", x-11,y-5);
+        text("IX", x-11,y-5);
       }else if(a==270){
         fill(255,0,0);
-        text("XII", x-7,y-10);
+        text("X", x-7,y-10);
       }else if(a==300){
         fill(255,0,0);
-        text("I", x,y-3);
+        text("XI", x,y-3);
       }else if(a==330){
         fill(255,0,0);
-        text("II", x+4,y+1);
+        text("XII", x+4,y+1);
       }
       vertex(x,y);
-      
     }
+    popMatrix();
+
     endShape();
     popMatrix();
   }
