@@ -1,4 +1,4 @@
-PImage down_img, up_img;
+PImage down_img, up_img, clock;
 Mostrador mostrador;
 Caixa caixa;
 float xmag, ymag = 0;
@@ -12,12 +12,13 @@ void setup() {
 
   up_img = loadImage("up.png");
   down_img = loadImage("down.png");
+  clock = loadImage("clock.png");
 
   int dim = 8 ;
 
-  mostrador = new Mostrador(-10);
+  mostrador = new Mostrador(-30);
   caixa = new Caixa();
-  
+
   mX = (width / 2) + dim;
   mY = (height / 2);
 
@@ -26,27 +27,24 @@ void setup() {
 }
 
 void draw() {
-  background(101);
+  background(50);
+
   camera();
 
-  //x, y, tamanho_x, tamanho_y
-
-    image(down_img, -135,185,275,150);
-    image(up_img, -135,-330,275,150);
+  // x, y, tamanho_x, tamanho_y
+  image(down_img, -135,185,275,150);
+  image(up_img, -135,-330,275,150);
 
   pushMatrix();
     translate (0,0,50);
     mostrador.show();
-    caixa.show();
+    // caixa.show();
   popMatrix();
 
   pushMatrix();
-    stroke(#000000);
-    sphere(10);
+    tint(255, 150);
+    image(clock, -width/2,-height/2);
   popMatrix();
-
-  pointLight(51, 102, 126, 35, 40, 36);
-
 }
 
 
