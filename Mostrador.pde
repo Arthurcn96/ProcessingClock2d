@@ -7,8 +7,8 @@ class Mostrador {
   int dist;
 
   color primary = #DEB46B;
-  color secondary = #FF0000;
-  color tertirary = #FF0000;
+  color secondary = #FFFFFF;
+  color tertirary = #FFFFFF;
 
   Mostrador(int translate){
 
@@ -46,10 +46,12 @@ class Mostrador {
   }
 
   void centro(){
-    noFill();
-    strokeWeight(5);
+    fill(primary);
+    strokeWeight(3);
     stroke(secondary);
     circle(0,0,10);
+    stroke(#000000);
+    circle(0,0,1);
   }
 
     void marcadores(){
@@ -92,11 +94,12 @@ class Mostrador {
 
       //Minuto
       float end1 = map(m, 0, 60, 0, 360);
-      ponteiro(true, true, 10, secondary, 15, 108, end1);
+      ponteiro(true, true, 10, secondary, 20, 108, end1);
 
       //Hora
       float end2 = map(h % 12, 0, 12, 0, 360);
-      ponteiro(true, true, 10, tertirary, 15, 55, end2);
+      ponteiro(true, true, 10, tertirary, 20, 55, end2);
 
     }
+    
   }

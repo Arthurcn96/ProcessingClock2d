@@ -1,6 +1,7 @@
 PImage down_img, up_img, clock;
 Mostrador mostrador;
 Caixa caixa;
+Botao botao;
 float xmag, ymag = 0;
 float newXmag, newYmag = 0;
 int zoom = 0;
@@ -17,6 +18,7 @@ void setup() {
   int dim = 8 ;
 
   mostrador = new Mostrador(-30);
+  botao = new Botao();
   caixa = new Caixa();
 
   mX = (width / 2) + dim;
@@ -32,17 +34,20 @@ void draw() {
   camera();
 
   // x, y, tamanho_x, tamanho_y
-  image(down_img, -135,185,275,150);
-  image(up_img, -135,-330,275,150);
+  // tint(255, 255);
+  // image(down_img, -135,185,275,150);
+  // image(up_img, -135,-330,275,150);
 
   pushMatrix();
     translate (0,0,50);
     mostrador.show();
+    botao.show();
+
     // caixa.show();
   popMatrix();
 
   pushMatrix();
-    tint(255, 150);
+    tint(255, 255);
     image(clock, -width/2,-height/2);
   popMatrix();
 }
