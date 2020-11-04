@@ -81,6 +81,8 @@ class Mostrador {
   void digital(){
     //salva em string pra mostrar correto
     String mn = str(m);
+    String hr = str(h);
+
 
     // Hora Digital
     fill(primary);
@@ -90,8 +92,11 @@ class Mostrador {
     if(m<10){
       mn = "0" + str(m);
     }
+    if(h<10){
+      hr = "0" + str(h);
+    }
 
-    text(h+":"+mn, 55,145);
+    text(hr+":"+mn, 55,145);
   }
 
   //bolinha do centro do ponteiro
