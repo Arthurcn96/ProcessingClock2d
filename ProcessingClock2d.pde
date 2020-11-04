@@ -1,5 +1,6 @@
 PImage down_img, up_img, clock;
 Mostrador mostrador;
+Display display;
 Caixa caixa;
 Botao botao;
 float xmag, ymag = 0;
@@ -13,16 +14,20 @@ void setup() {
 
   up_img = loadImage("up.png");
   down_img = loadImage("down.png");
-  clock = loadImage("clock.png");
+  clock = loadImage("pulseira.png");
 
   int dim = 8 ;
 
-  mostrador = new Mostrador(-30);
-  botao = new Botao();
+  mostrador = new Mostrador(0);
+  display = new Display(4);
+  botao = new Botao(4);
   caixa = new Caixa();
+
 
   mX = (width / 2) + dim;
   mY = (height / 2);
+
+  background(#FFFFFF);
 
   smooth(8);
 
@@ -30,20 +35,14 @@ void setup() {
 
 void draw() {
   background(50);
-
   camera();
 
-  // x, y, tamanho_x, tamanho_y
-  // tint(255, 255);
-  // image(down_img, -135,185,275,150);
-  // image(up_img, -135,-330,275,150);
-
   pushMatrix();
+    display.show();
     translate (0,0,50);
     mostrador.show();
     botao.show();
-
-    // caixa.show();
+    // rect(0, 0, a, b, 15);
   popMatrix();
 
   pushMatrix();
