@@ -51,8 +51,8 @@ void setup() {
 }
 
 void inicio(){
-  String texto = "Os inputs são:\n 'a','s' e 'd' - Alterna entre unidades de temperatura \n 'b' - Desliga a tela do relógio";
-    javax.swing.JOptionPane.showMessageDialog ( null, texto, "Imagem Salva", javax.swing.JOptionPane.INFORMATION_MESSAGE  );
+  String texto = "Funcionalidades:\n 'TECLA A' - Alterna entre as escalas de temperatura \n 'BOTÃO DIREITO' - Desliga/liga o display do relógio";
+  javax.swing.JOptionPane.showMessageDialog ( null, texto, "Imagem Salva", javax.swing.JOptionPane.INFORMATION_MESSAGE  );
 }
 
 void keyPressed() {
