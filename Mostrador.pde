@@ -1,5 +1,6 @@
 PImage cafe, almoco, trabalho, lazer, dormir;
 
+
 // Parte frontal do relógio - Ponteiros e Cronometros
 class Mostrador {
 
@@ -16,9 +17,16 @@ class Mostrador {
   color tertiary = #ffffff;
   color default_off = #1C1C1C;
 
+
   Mostrador(int translate){
 
     dist = translate;
+
+    cafe = loadImage("cafe.png");
+    trabalho = loadImage("trabalho.png");
+    almoco = loadImage("almoco.png");
+    lazer = loadImage("lazer.png");
+    dormir = loadImage("dormir.png");
 
   }
 
@@ -100,6 +108,7 @@ class Mostrador {
   // entrada definida em celsius, e mode é a escala de temperatura
   void temperature(float temp_celsius,int mode){
     fill(secondary);
+
     textSize(24);
     // fahrenheit
     if(mode == 1){
@@ -109,6 +118,7 @@ class Mostrador {
     // celsius
     if(mode == 2){
       text(str(temp_celsius)+"ºC", -125, 145);
+
     }
     // kelvin
     if(mode == 3){
@@ -123,7 +133,6 @@ class Mostrador {
 
     if(mode == 1){
       pushMatrix();
-        cafe = loadImage("cafe.png");
         tint(255, 150);
         image(cafe, 90, -150, 30, 30);
       popMatrix();
@@ -131,7 +140,6 @@ class Mostrador {
 
     if(mode == 2){
       pushMatrix();
-        trabalho = loadImage("trabalho.png");
         tint(255, 150);
         image(trabalho, 90, -150, 30, 30);
       popMatrix();
@@ -139,7 +147,6 @@ class Mostrador {
 
     if(mode == 3){
       pushMatrix();
-        almoco = loadImage("almoco.png");
         tint(255, 150);
         image(almoco, 90, -150, 30, 30);
       popMatrix();
@@ -147,7 +154,6 @@ class Mostrador {
 
     if(mode == 4){
       pushMatrix();
-        lazer = loadImage("lazer.png");
         tint(255, 150);
         image(lazer, 90, -150, 30, 30);
       popMatrix();
@@ -155,7 +161,6 @@ class Mostrador {
 
     if(mode == 5){
       pushMatrix();
-        dormir = loadImage("dormir.png");
         tint(255, 150);
         image(dormir, 90, -150, 30, 30);
       popMatrix();
@@ -196,6 +201,7 @@ class Mostrador {
 
     // Hora Digital
     fill(secondary);
+
     textSize(24);
 
     // Coloca um 0 antes de minutos < 10
@@ -213,6 +219,7 @@ class Mostrador {
 ////////////////////////////////////////////////////////////////////////
   //bolinha do centro do ponteiro
   void centro(color cor){
+
     noFill();
     strokeWeight(5);
     stroke(cor);

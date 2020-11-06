@@ -4,9 +4,7 @@ int h = 0;
 color primary;
 color secondary;
 
-
 class Caixa{
-
 
   Caixa(){
 

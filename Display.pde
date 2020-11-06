@@ -17,13 +17,10 @@ class Display{
     strokeWeight = _strokeWeight;
   }
 
-
   void show(){
 
     interno();
     externo();
-
-
 
   }
 
@@ -39,7 +36,6 @@ class Display{
 
     pushMatrix();
 
-
       translate(-aa/2 , -bb/2,0.01);
       fill(color1);
       strokeWeight(strokeWeight);
@@ -54,7 +50,6 @@ class Display{
         rect(0, (i*30)/2, aa, bb - (i*30), 50);
 
       }
-
 
     popMatrix();
   }

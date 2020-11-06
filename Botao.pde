@@ -1,10 +1,7 @@
 int tam;
 color b1, b2, c1, c2;
-
-
 class Botao{
   int strokeWeight;
-
 
   Botao(int _strokeWeight){
 
@@ -29,30 +26,27 @@ class Botao{
 
   }
 
-
   void botaoSuperior(boolean pressionado){
     strokeWeight(strokeWeight);
 
     if (pressionado){
 
       fill(70, 70, 70, 20);
-      rect(160, -110 , 10, 72, 60, 10, 10, 60);
+      rect(160, -110 , 20, 72, 60, 10, 10, 60);
 
 
       for(int i = 0; i<4; i++){
 
         noStroke();
         fill(10, 10, 10, 30);
-        rect(160, - 110 + (i*8), 10, 72 - (i*8)*2, 60, 10, 10, 60);
+        rect(160, - 110 + (i*8), 20, 72 - (i*8)*2, 60, 10, 10, 60);
 
       }
-
 
     }else{
 
       fill(70, 70, 70, 20);
       rect(160, -110 , 30, 72, 60, 10, 10, 60);
-
 
       for(int i = 0; i<4; i++){
 
@@ -73,8 +67,6 @@ class Botao{
       fill(70, 70, 70, 20);
       rect(160, 12, 4, 112, 10, 2, 2, 10);
 
-
-
       for(int i = 0; i<4; i++){
 
         noStroke();
@@ -88,8 +80,6 @@ class Botao{
       fill(70, 70, 70, 20);
       rect(160, 12, 10, 112, 10, 2, 2, 10);
 
-
-
       for(int i = 0; i<4; i++){
 
         noStroke();
@@ -100,8 +90,6 @@ class Botao{
 
     }
 
-
   }
-
 
 }
