@@ -62,7 +62,7 @@ void keyPressed() {
     pressionadoBaixo = true;
     if(temp > 3) temp = 1;
   }
-  
+
 }
 void keyReleased() {
 
