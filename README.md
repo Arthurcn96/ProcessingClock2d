@@ -2,7 +2,7 @@
 
 Desenvolvimento de um projeto usando os recursos do Processing de um relógio 2D para matéria de Computação Gráfica
 
-![gif](gif.gif)
+ <img  src="gif.gif" style="display: block;" alt="gif_relogio" class="center" width="100%"> 
 
 ## Descrição do projeto
 
