@@ -13,8 +13,12 @@ Neste projeto, funcionalidades deverão ser integradas empregando opções ofere
   -  Uso dos botões do mouse pressionados com as variáveis mousePressed e mouseButton para executar ações diferentes.
   -  Uso da variável booleana keyPressed para executar uma ação.
 
-|Input|Função|
-|-----|------|
-|Botão Direito| Alterna entre as escalas de temperatura|
-|Botão Esquerdo| Desliga/liga o display do relógio|
+
+<p align="center">
+
+| Input | Função |
+|-------|--------|
+| Botão  Direito | Alterna entre as escalas de temperatura|
+| Botão  Esquerdo| Desliga/liga o display do relógio|
   
+</p>
